@@ -68,11 +68,42 @@ You should see response
 }
 ```
 
-// Add API
+Apostrephe was caught by linter, so added rule:
+eslintrc.json
+```
+{
+  "extends": "next/core-web-vitals",
+  "rules": { "react/no-unescaped-entities": 0 }
+
+}
+
+```
+
 
 
 Add to git.
 
+## Plesk
+On the Domains page, click Add Domain. Chooose the template 'Node.JS application'.
+Click Temporary domain name and node the username/password down:
+User: gallant-keldysh_atxun8il0es
+Pass: _cVGN0n01k
+
+On Node page, click Enable Node.js and choose which settings you want.
+
+
+# Connect GIT to plesk
+
+On Git copy the SSH link:
+`git@github.com:mytchallb/blog-plesk-node.git`
+
+Copy 'SSH public key content' from plesk into Git repo Settings, Deploy keys
+
+# Finish Node setup
+
+Run `npm install`.
+
+Click 'Run script' and run the `build` script (don't need to add 'npm run')
 
 
 
