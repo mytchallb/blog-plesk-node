@@ -1,6 +1,6 @@
 # Setting up a node app on Plesk
 
-Install next
+Install next 13
 `npx create-next-app@latest --typescript`
 
 Test
@@ -104,6 +104,59 @@ Copy 'SSH public key content' from plesk into Git repo Settings, Deploy keys
 Run `npm install`.
 
 Click 'Run script' and run the `build` script (don't need to add 'npm run')
+
+This will create a '.next' folder in our project directory (If you don't already have one from doing a test build on your local machine)
+
+Update Node settings like screenshot.
+
+## SSH
+Go to Hosting & DNS, click 'Web Hosting Access', and change 'Access to the server over SSH' to '/bin/bash'
+Now on our main domain page we can click under 'Dev Tools', SSH Terminal.
+```
+cd httpdocs
+ls
+cd node_modules/.bin
+vi next
+
+
+```
+scroll down until you see `const defaultCommand = "dev"`
+Press 'i' to enter Vim's editing mode, replace "dev" with "start".
+Press escape to get out of editing mode and type ":wq" to write your changes and exit the file.
+
+# Will this file change?
+If node_modules are deleted then need to do again
+If next is updated?
+
+
+# To restart app
+After SSH changes, ran build and clicked restart app
+
+Note: nginx reverse proxy  configured automatically
+
+Navigate to `/api/hello` to make sure API is working
+
+
+# Getting this to work automatically
+go to domain, git repo settings, under Deployment settings click 'Enable additional deployment actions' and paste in:
+
+```
+rm -rf tmp
+(PATH=/opt/plesk/node/18/bin/:$PATH;  npm install && npm run build &> npm-install.log) 
+mkdir tmp
+touch tmp/restart.txt
+```
+
+Note you'll have to change the node version from 18 depending on what you're using, also the build command.
+Making a tempory file maked plesk restart the app.
+
+
+# Getting a mysql database connected
+Could use postgres
+
+
+
+
 
 
 

@@ -11,6 +11,7 @@ export default function Home() {
       <main>
         <h1 className="text-blue-700">Next.JS app</h1>
         <p>This a test to make sure it's working!</p>
+        <p>And now we've got automatic GIT deployments!</p>
       </main>
     </>
   );
