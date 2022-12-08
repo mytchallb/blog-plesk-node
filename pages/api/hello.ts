@@ -9,5 +9,8 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
+
+  // Generate Prisma client
+
   res.status(200).json({ name: 'John Doe' })
 }
