@@ -37,7 +37,7 @@ export default function Home() {
             className="rounded-xl mb-8"
           />
           <p className="text-xl">
-            She is very <span className="font-bold">{adjective}</span>!
+            She is very <span className="font-bold">{adjective}</span>
           </p>
         </div>
       </main>
