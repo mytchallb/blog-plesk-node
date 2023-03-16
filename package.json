@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "cleanup": "rm -r node_modules",
+    "cleanup": "rm -r node_modules; mv ./.next/static ./.next/standalone/; cp -r ./public ./.next/standalone/",
     "start": "next start",
     "lint": "next lint",
     "migrate:local": "dotenv -e .env.local -- npx prisma migrate dev",
