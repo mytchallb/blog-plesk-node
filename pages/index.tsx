@@ -13,6 +13,7 @@ export default function Home() {
         <p>This a test to make sure it's working!</p>
         <p>And now we've got automatic GIT deployments!</p>
         <p>Another change to check automatic updates 😁</p>
+        <p>And one more for our cleanup function.</p>
       </main>
     </>
   );
