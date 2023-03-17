@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "copy": "cp -r ./.next/static ./.next/standalone/; cp -r ./public ./.next/standalone/",
+    "copy": "mv ./.next/static ./.next/standalone/; cp -r ./public ./.next/standalone/",
     "cleanup": "rm -r node_modules",
     "start": "next start",
     "lint": "next lint",
